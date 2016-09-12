@@ -4,7 +4,7 @@
   "description": "A simple intro to ES2015/2016/2017 by way of an online quiz application.",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm test",
+    "prestart": "npm update && npm test",
     "start": "gulp && gulp watch",
     "test": "mocha --compilers js:babel-core/register"
   },
