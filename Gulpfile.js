@@ -43,7 +43,10 @@ gulp.task('lint', () =>
   ])
     .pipe(plugins.eslint())
     .pipe(plugins.eslint.format())
-    .pipe(plugins.eslint.failAfterError())
+    .pipe(plugins.eslint
+      .failAfterError()
+      .on('error', e => plugins.util.log(e))
+    )
     .pipe(plugins.jscs({
       preset: 'airbnb',
     }))
